@@ -36,32 +36,34 @@
 </header>
 
 <section>
-  <form name="contact" method="POST" data-netlify="true">
-    <input type="hidden" name="form-name" value="contact">
-    <label for="nom">Nom *</label>
-    <input type="text" id="nom" name="nom" required>
+    <form name="contact" method="POST" data-netlify="true" action="merci.html">
+      <input type="hidden" name="form-name" value="contact">
+    
+      <label for="nom">Nom *</label>
+      <input type="text" id="nom" name="nom" required>
+    
+      <label for="email">Adresse email *</label>
+      <input type="email" id="email" name="email" required>
+    
+      <label for="entreprise">Entreprise</label>
+      <input type="text" id="entreprise" name="entreprise">
+    
+      <label for="sujet">Objet de la demande *</label>
+      <select id="sujet" name="sujet" required>
+        <option value="">-- Choisir un sujet --</option>
+        <option value="diagnostic">Demande de diagnostic IA</option>
+        <option value="formation">Formation ou acculturation IA</option>
+        <option value="cas_usage">Étude de cas d’usage ou POC</option>
+        <option value="devis">Demande de devis personnalisé</option>
+        <option value="autre">Autre</option>
+      </select>
+    
+      <label for="message">Message *</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+    
+      <button type="submit">Envoyer la demande</button>
+    </form>
 
-    <label for="email">Adresse email *</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="entreprise">Entreprise</label>
-    <input type="text" id="entreprise" name="entreprise">
-
-    <label for="sujet">Objet de la demande *</label>
-    <select id="sujet" name="sujet" required>
-      <option value="">-- Choisir un sujet --</option>
-      <option value="diagnostic">Demande de diagnostic IA</option>
-      <option value="formation">Formation ou acculturation IA</option>
-      <option value="cas_usage">Étude de cas d’usage ou POC</option>
-      <option value="devis">Demande de devis personnalisé</option>
-      <option value="autre">Autre</option>
-    </select>
-
-    <label for="message">Message *</label>
-    <textarea id="message" name="message" rows="6" required></textarea>
-
-    <button type="submit">Envoyer la demande</button>
-  </form>
 </section>
 
 <footer>
