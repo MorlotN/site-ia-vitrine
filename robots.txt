@@ -1,0 +1,20 @@
+# Autoriser tous les robots à explorer toutes les pages
+User-agent: *
+Disallow:
+
+# Indiquer l’emplacement du plan de site XML pour un meilleur SEO
+Sitemap: https://www.nicolasmorlot.fr/sitemap.xml
+
+# Directives facultatives
+# Empêcher l’indexation des fichiers potentiellement sensibles (non présents ici, mais préventif)
+Disallow: /cgi-bin/
+Disallow: /admin/
+Disallow: /tmp/
+
+# Délais entre les requêtes (facultatif)
+Crawl-delay: 10
+
+# Empêcher l’indexation des fichiers temporaires ou de build
+Disallow: /*.bak$
+Disallow: /*.tmp$
+Disallow: /*.swp$

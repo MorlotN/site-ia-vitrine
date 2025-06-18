@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Prenez contact avec Nicolas Morlot pour vos projets IA en industrie : demande de devis, audit, formation ou accompagnement sur mesure.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – Nicolas Morlot</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    nav { background: #004080; color: white; padding: 1em; text-align: center; }
+    nav a { color: white; margin: 0 1em; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    header, section, footer { padding: 2em; max-width: 1000px; margin: auto; }
+    header { background: #f0f0f0; text-align: center; }
+    h1 { font-size: 2em; color: #004080; }
+    h2 { color: #003366; margin-top: 2em; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1em; }
+    th, td { padding: 0.8em; border: 1px solid #ccc; text-align: left; }
+    th { background-color: #e6e6e6; }
+    footer { background: #222; color: white; text-align: center; font-size: 0.9em; padding: 1em; margin-top: 3em; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="services.html">Services</a>
+  <a href="cas-dusage.html">Cas d’usage</a>
+  <a href="tarifs-aides.html">Tarifs & Aides</a>
+  <a href="a-propos.html">À propos</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<header>
+  <h1>Contactez-moi</h1>
+  <p>Je suis à votre écoute pour toute demande de diagnostic, formation IA, devis personnalisé ou projet sur mesure.</p>
+</header>
+
+<section>
+  <form name="contact" method="POST" data-netlify="true">
+    <input type="hidden" name="form-name" value="contact">
+    <label for="nom">Nom *</label>
+    <input type="text" id="nom" name="nom" required>
+
+    <label for="email">Adresse email *</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="entreprise">Entreprise</label>
+    <input type="text" id="entreprise" name="entreprise">
+
+    <label for="sujet">Objet de la demande *</label>
+    <select id="sujet" name="sujet" required>
+      <option value="">-- Choisir un sujet --</option>
+      <option value="diagnostic">Demande de diagnostic IA</option>
+      <option value="formation">Formation ou acculturation IA</option>
+      <option value="cas_usage">Étude de cas d’usage ou POC</option>
+      <option value="devis">Demande de devis personnalisé</option>
+      <option value="autre">Autre</option>
+    </select>
+
+    <label for="message">Message *</label>
+    <textarea id="message" name="message" rows="6" required></textarea>
+
+    <button type="submit">Envoyer la demande</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2025 Nicolas Morlot – Expert IA & Industrie. Tous droits réservés.</p>
+</footer>
+
+</body>
+</html>
