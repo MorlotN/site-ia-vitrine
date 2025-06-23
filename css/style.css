@@ -1,0 +1,158 @@
+/* Fichier CSS global pour le site vitrine de Nicolas Morlot */
+
+/* ====== VARIABLES DE COULEURS ====== */
+:root {
+  --bleu-principal: #004080;
+  --bleu-lien: #0070c0;
+  --gris-clair: #f0f0f0;
+  --gris-moyen: #cccccc;
+  --blanc: #ffffff;
+  --orange: #f57c00;
+}
+
+/* ====== RÉINITIALISATION ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background-color: var(--blanc);
+  color: #222;
+  line-height: 1.4;
+}
+
+/* ====== NAVIGATION ====== */
+nav {
+  background: var(--bleu-principal);
+  color: var(--blanc);
+  padding: 1em;
+  text-align: center;
+}
+
+nav a {
+  color: var(--blanc);
+  margin: 0 1em;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: var(--orange);
+}
+
+/* ====== STRUCTURE ====== */
+header, section, footer {
+  padding: 2em;
+  max-width: 1000px;
+  margin: auto;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+header {
+  background: var(--gris-clair);
+  text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+  color: var(--bleu-principal);
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  color: #003366;
+  margin-top: 2em;
+  font-size: 1.5em;
+}
+
+p, li {
+  font-size: 1rem;
+  margin-bottom: 1em;
+}
+
+ul {
+  padding-left: 1.2em;
+  list-style: disc;
+}
+
+.cta {
+  display: inline-block;
+  background-color: var(--orange);
+  color: var(--blanc);
+  padding: 0.75em 1.5em;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.cta:hover {
+  background-color: #e56600;
+}
+
+footer {
+  background: #222;
+  color: var(--blanc);
+  text-align: center;
+  font-size: 0.9em;
+  padding: 1em;
+  margin-top: 3em;
+}
+
+/* ====== TABLES ====== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+}
+
+th, td {
+  padding: 0.8em;
+  border: 1px solid var(--gris-moyen);
+  text-align: left;
+}
+
+th {
+  background-color: #e6e6e6;
+}
+
+/* ====== ANIMATIONS ====== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Pour déclencher l’animation section par section */
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  nav a {
+    display: block;
+    margin: 0.5em 0;
+  }
+
+  header, section, footer {
+    padding: 1em;
+  }
+}
+
+/* ====== VISUELS PRÉDÉFINIS (placeholders) ====== */
+.img-illustration {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em auto;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}

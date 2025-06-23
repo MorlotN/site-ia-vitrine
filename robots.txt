@@ -1,4 +1,4 @@
-# Autoriser tous les robots Ã  explorer toutes les pages
+# Autoriser tous les robots Ã  explorer toutes les pages
 User-agent: *
 Disallow:
 
