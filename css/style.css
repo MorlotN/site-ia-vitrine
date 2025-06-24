@@ -1,25 +1,25 @@
 /* CSS Modernisé 2025 - Nicolas Morlot Expert IA Industriel */
 
-/* ====== VARIABLES DE COULEURS 2025 ====== */
+/* ====== VARIABLES DE COULEURS OPTIMISÉES ====== */
 :root {
-  /* Palette principale moderne */
-  --bleu-principal: #1B365D;      /* Bleu profond confiance */
+  /* Palette principale avec meilleur contraste */
+  --bleu-principal: #1A202C;      /* Bleu plus foncé pour meilleur contraste */
   --bleu-secondaire: #2C5282;     /* Bleu moyen */
-  --accent-mocha: #A0826D;        /* Mocha Mousse 2025 */
-  --neutre-chaud: #F5F2EA;        /* Blanc cassé chaleureux */
-  --gris-moderne: #6B7280;        /* Gris contemporain */
-  --orange-action: #F57C00;       /* Orange CTA conservé */
+  --accent-mocha: #8B4513;        /* Mocha plus foncé pour contraste */
+  --neutre-chaud: #F7FAFC;        /* Blanc cassé plus contrasté */
+  --gris-moderne: #4A5568;        /* Gris plus foncé pour lisibilité */
+  --orange-action: #E53E3E;       /* Orange plus contrasté */
   --blanc: #FFFFFF;
-  --noir-texte: #1F2937;
+  --noir-texte: #1A202C;          /* Noir plus profond */
   
   /* Gradients modernes */
   --gradient-hero: linear-gradient(135deg, var(--bleu-principal) 0%, var(--bleu-secondaire) 100%);
-  --gradient-accent: linear-gradient(45deg, var(--accent-mocha) 0%, #B8956A 100%);
+  --gradient-accent: linear-gradient(45deg, var(--accent-mocha) 0%, #A0522D 100%);
   
   /* Ombres sophistiquées */
-  --shadow-card: 0 10px 25px rgba(27, 54, 93, 0.1);
-  --shadow-hover: 0 20px 40px rgba(27, 54, 93, 0.15);
-  --shadow-button: 0 4px 14px rgba(245, 124, 0, 0.3);
+  --shadow-card: 0 10px 25px rgba(26, 32, 44, 0.15);
+  --shadow-hover: 0 20px 40px rgba(26, 32, 44, 0.25);
+  --shadow-button: 0 4px 14px rgba(229, 62, 62, 0.4);
 }
 
 /* ====== RÉINITIALISATION ET BASE ====== */
@@ -79,6 +79,11 @@ nav a {
 nav a:hover {
   background-color: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
+}
+
+nav a:focus {
+  outline: 2px solid var(--orange-action);
+  outline-offset: 2px;
 }
 
 nav a.active {
@@ -171,10 +176,10 @@ p, li {
   line-height: 1.7;
 }
 
-/* ====== COMPOSANTS MODERNES ====== */
+/* ====== BOUTONS OPTIMISÉS ====== */
 .cta {
   display: inline-block;
-  background: var(--gradient-accent);
+  background: var(--orange-action);
   color: var(--blanc);
   padding: 1rem 2rem;
   border-radius: 12px;
@@ -204,9 +209,14 @@ p, li {
   left: 100%;
 }
 
-.cta:hover {
+.cta:hover, .cta:focus {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(245, 124, 0, 0.4);
+  box-shadow: 0 8px 25px rgba(229, 62, 62, 0.5);
+}
+
+.cta:focus {
+  outline: 2px solid var(--accent-mocha);
+  outline-offset: 2px;
 }
 
 .cta-secondary {
@@ -220,35 +230,80 @@ p, li {
   color: var(--blanc);
 }
 
-/* ====== CARTES MODERNES ====== */
-.service-card {
+/* ====== CARTES AVEC ANIMATIONS AMÉLIORÉES ====== */
+.service-card, .feature-item {
   background: var(--blanc);
   border-radius: 16px;
   padding: 2rem;
   margin: 2rem 0;
   box-shadow: var(--shadow-card);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(27, 54, 93, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(26, 32, 44, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
-.service-card:hover {
-  transform: translateY(-8px);
+/* Animation de la barre supérieure colorée */
+.service-card::before, .feature-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover::before, .feature-item:hover::before {
+  transform: scaleX(1);
+}
+
+/* Effet hover principal */
+.service-card:hover, .feature-item:hover {
+  transform: translateY(-10px) scale(1.02);
   box-shadow: var(--shadow-hover);
 }
 
-.bloc {
-  background: var(--blanc);
-  border-radius: 12px;
+/* Animation pour les cartes animées */
+.animated-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideInUp 0.6s ease forwards;
+}
+
+@keyframes slideInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====== SOCIAL PROOF / LOGOS CLIENTS ====== */
+.client-logo {
+  background: var(--neutre-chaud);
   padding: 1.5rem;
-  margin: 1.5rem 0;
-  box-shadow: var(--shadow-card);
-  border-left: 4px solid var(--accent-mocha);
+  border-radius: 12px;
+  font-weight: 700;
+  color: var(--bleu-principal);
   transition: all 0.3s ease;
+  border: 2px solid transparent;
+  text-align: center;
+  cursor: pointer;
 }
 
-.bloc:hover {
-  transform: translateX(5px);
+.client-logo:hover {
+  transform: translateY(-5px) scale(1.05);
+  border-color: var(--accent-mocha);
   box-shadow: var(--shadow-hover);
+  background: var(--blanc);
+}
+
+.client-logo small {
+  color: var(--gris-moderne);
+  font-weight: 400;
 }
 
 /* ====== GRID MODERNE ====== */
@@ -272,11 +327,6 @@ p, li {
   background: var(--blanc);
   border-radius: 12px;
   box-shadow: var(--shadow-card);
-  transition: transform 0.3s ease;
-}
-
-.feature-item:hover {
-  transform: translateY(-5px);
 }
 
 /* ====== TABLEAUX MODERNES ====== */
@@ -300,11 +350,12 @@ th {
 
 td {
   padding: 1rem;
-  border-bottom: 1px solid rgba(107, 114, 128, 0.1);
+  border-bottom: 1px solid rgba(74, 85, 104, 0.1);
+  color: var(--noir-texte);
 }
 
 tbody tr:hover {
-  background-color: rgba(27, 54, 93, 0.02);
+  background-color: rgba(26, 32, 44, 0.02);
 }
 
 /* ====== FORMULAIRES MODERNES ====== */
@@ -327,17 +378,18 @@ label {
 input, select, textarea {
   width: 100%;
   padding: 0.75rem;
-  border: 2px solid rgba(107, 114, 128, 0.2);
+  border: 2px solid rgba(74, 85, 104, 0.2);
   border-radius: 8px;
   font-size: 1rem;
   transition: border-color 0.3s ease;
   background: var(--neutre-chaud);
+  color: var(--noir-texte);
 }
 
 input:focus, select:focus, textarea:focus {
   outline: none;
   border-color: var(--accent-mocha);
-  box-shadow: 0 0 0 3px rgba(160, 130, 109, 0.1);
+  box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
 }
 
 button[type="submit"] {
@@ -399,6 +451,11 @@ footer {
   }
 }
 
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
 .animate-on-scroll {
   opacity: 0;
   animation: fadeInUp 0.8s ease forwards;
@@ -425,12 +482,13 @@ section:nth-child(4) { animation-delay: 0.4s; }
 }
 
 .highlight-box {
-  background: linear-gradient(135deg, rgba(160, 130, 109, 0.1), rgba(160, 130, 109, 0.05));
-  border: 1px solid rgba(160, 130, 109, 0.2);
+  background: var(--blanc);
+  border: 1px solid rgba(139, 69, 19, 0.2);
   border-radius: 12px;
   padding: 1.5rem;
   margin: 1.5rem 0;
   border-left: 4px solid var(--accent-mocha);
+  box-shadow: var(--shadow-card);
 }
 
 /* ====== PRIX ET BADGES ====== */
@@ -533,7 +591,7 @@ section:nth-child(4) { animation-delay: 0.4s; }
 
 /* Focus visible pour l'accessibilité */
 *:focus-visible {
-  outline: 2px solid var(--accent-mocha);
+  outline: 2px solid var(--orange-action);
   outline-offset: 2px;
 }
 
