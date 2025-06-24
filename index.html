@@ -6,17 +6,570 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="keywords" content="consultant IA industrielle, intelligence artificielle Lyon, automatisation processus, expert IA PME, transformation numérique industrie">
   <title>Expert IA Industrielle Lyon | Transformez votre production – Nicolas Morlot</title>
-  <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ====== VARIABLES AMÉLIORÉES 2025 ====== */
+    :root {
+      /* Palette optimisée avec meilleur contraste */
+      --bleu-principal: #1B365D;
+      --bleu-secondaire: #2C5282;
+      --accent-mocha: #A0826D;
+      --neutre-chaud: #F5F2EA;
+      --gris-moderne: #4A5568;
+      --orange-action: #E53E3E;
+      --blanc: #FFFFFF;
+      --noir-texte: #1A202C;
+      
+      /* Gradients modernisés */
+      --gradient-hero: linear-gradient(135deg, var(--bleu-principal) 0%, var(--bleu-secondaire) 100%);
+      --gradient-accent: linear-gradient(45deg, var(--accent-mocha) 0%, #B8956A 100%);
+      
+      /* Ombres optimisées */
+      --shadow-card: 0 10px 25px rgba(27, 54, 93, 0.12);
+      --shadow-hover: 0 20px 40px rgba(27, 54, 93, 0.18);
+      --shadow-button: 0 4px 14px rgba(229, 62, 62, 0.3);
+    }
+
+    /* ====== RÉINITIALISATION ET BASE ====== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background-color: var(--neutre-chaud);
+      color: var(--noir-texte);
+      line-height: 1.6;
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    /* ====== NAVIGATION AMÉLIORÉE ====== */
+    nav {
+      background: var(--gradient-hero);
+      backdrop-filter: blur(10px);
+      padding: 1rem 0;
+      box-shadow: var(--shadow-card);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--blanc);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    /* Navigation accessible au clavier */
+    nav a:focus {
+      outline: 2px solid var(--accent-mocha);
+      outline-offset: 2px;
+    }
+
+    nav a:hover, nav a:focus {
+      background-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+    }
+
+    nav a.active {
+      background-color: var(--accent-mocha);
+      color: var(--blanc);
+    }
+
+    /* ====== HERO SECTION FULL-SCREEN ====== */
+    .hero-section {
+      min-height: 100vh;
+      background: var(--gradient-hero);
+      color: var(--blanc);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding: 2rem;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200"><path d="M0,100 C150,200 350,0 500,100 C650,200 850,0 1000,100 L1000,200 L0,200 Z" fill="rgba(255,255,255,0.05)"/></svg>') no-repeat bottom;
+      background-size: cover;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1000px;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .hero-badge {
+      background: var(--blanc);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin: 0 auto 3rem auto;
+      max-width: 350px;
+      box-shadow: var(--shadow-card);
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeInUp 1s ease 0.3s forwards;
+    }
+
+    .hero-badge .icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-badge h3 {
+      color: var(--bleu-principal);
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .hero-badge h3:last-child {
+      color: var(--accent-mocha);
+    }
+
+    /* ====== TYPOGRAPHIE MODERNISÉE ====== */
+    .hero-title {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+      background: linear-gradient(45deg, var(--blanc), rgba(255,255,255,0.8));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeInUp 1s ease 0.6s forwards;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+      margin: 2rem 0;
+      opacity: 0.95;
+      line-height: 1.6;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeInUp 1s ease 0.9s forwards;
+    }
+
+    .hero-cta {
+      margin-top: 3rem;
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeInUp 1s ease 1.2s forwards;
+    }
+
+    /* ====== BOUTONS OPTIMISÉS ====== */
+    .cta {
+      display: inline-block;
+      background: var(--orange-action);
+      color: var(--blanc);
+      padding: 1.2rem 2.5rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      box-shadow: var(--shadow-button);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .cta:hover::before {
+      left: 100%;
+    }
+
+    .cta:hover, .cta:focus {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 25px rgba(229, 62, 62, 0.4);
+    }
+
+    .cta:focus {
+      outline: 2px solid var(--accent-mocha);
+      outline-offset: 2px;
+    }
+
+    .cta-secondary {
+      background: transparent;
+      border: 2px solid var(--accent-mocha);
+      color: var(--accent-mocha);
+      font-weight: 600;
+    }
+
+    .cta-secondary:hover {
+      background: var(--accent-mocha);
+      color: var(--blanc);
+    }
+
+    /* ====== SECTIONS OPTIMISÉES ====== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--bleu-principal);
+      margin-bottom: 3rem;
+      font-weight: 700;
+      text-align: center;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--gradient-accent);
+      border-radius: 2px;
+    }
+
+    /* ====== SOCIAL PROOF / LOGOS CLIENTS ====== */
+    .social-proof {
+      background: var(--blanc);
+      padding: 3rem 2rem;
+      margin: 2rem 0;
+      border-radius: 20px;
+      box-shadow: var(--shadow-card);
+      text-align: center;
+    }
+
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .client-logo {
+      background: var(--neutre-chaud);
+      padding: 1.5rem;
+      border-radius: 12px;
+      font-weight: 700;
+      color: var(--bleu-principal);
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .client-logo:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-mocha);
+      box-shadow: var(--shadow-hover);
+    }
+
+    /* ====== CARTES AVEC ANIMATIONS ====== */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .feature-card {
+      background: var(--blanc);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow-card);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(27, 54, 93, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient-accent);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .feature-card h3 {
+      font-size: 1.4rem;
+      color: var(--bleu-principal);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .feature-card p {
+      color: var(--gris-moderne);
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    /* ====== CTA FINAL OPTIMISÉ ====== */
+    .final-cta {
+      background: var(--gradient-hero);
+      color: var(--blanc);
+      padding: 4rem 2rem;
+      border-radius: 20px;
+      margin: 4rem auto;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200"><path d="M0,100 C150,200 350,0 500,100 C650,200 850,0 1000,100 L1000,200 L0,200 Z" fill="rgba(255,255,255,0.05)"/></svg>') no-repeat bottom;
+      background-size: cover;
+      z-index: 1;
+    }
+
+    .final-cta-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .final-cta h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .final-cta p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+
+    .final-cta .cta-group {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+    }
+
+    /* ====== FOOTER OPTIMISÉ ====== */
+    footer {
+      background: var(--gradient-hero);
+      color: var(--blanc);
+      text-align: center;
+      padding: 2rem;
+      border-top: 4px solid var(--accent-mocha);
+    }
+
+    /* ====== ANIMATIONS ====== */
+    @keyframes fadeInUp {
+      from { 
+        opacity: 0; 
+        transform: translateY(30px); 
+      }
+      to { 
+        opacity: 1; 
+        transform: translateY(0); 
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .animate-pulse {
+      animation: pulse 2s infinite;
+    }
+
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ====== RESPONSIVE OPTIMISÉ ====== */
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .hero-section {
+        min-height: 100vh;
+        padding: 1rem;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cta {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .clients-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      section {
+        padding: 2rem 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-badge {
+        padding: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .feature-card {
+        padding: 1.5rem;
+      }
+
+      .final-cta {
+        padding: 2rem 1rem;
+      }
+    }
+
+    /* ====== ACCESSIBILITÉ ====== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    *:focus-visible {
+      outline: 2px solid var(--accent-mocha);
+      outline-offset: 2px;
+    }
+
+    /* Skip to main content pour accessibilité */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: var(--bleu-principal);
+      color: var(--blanc);
+      padding: 8px;
+      text-decoration: none;
+      z-index: 1001;
+    }
+
+    .skip-link:focus {
+      top: 6px;
+    }
+  </style>
 </head>
 <body>
 
-<nav>
+<!-- Lien d'accessibilité -->
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+<nav role="navigation" aria-label="Navigation principale">
   <div class="nav-container">
     <div class="nav-links">
-      <a href="index.html" class="active">Accueil</a>
+      <a href="index.html" class="active" aria-current="page">Accueil</a>
       <a href="services.html">Services</a>
       <a href="cas-dusage.html">Cas d'usage</a>
       <a href="tarifs-aides.html">Tarifs & Aides</a>
@@ -26,170 +579,146 @@
   </div>
 </nav>
 
-<header>
-  <div class="container">
-    <div style="background: var(--blanc); border-radius: 16px; padding: 2rem; margin: 2rem auto; max-width: 400px; box-shadow: var(--shadow-card);">
-      <div style="font-size: 3rem; text-align: center; margin-bottom: 1rem;">🤖</div>
-      <h3 style="color: var(--bleu-principal) !important; text-align: center; margin: 0;">Intelligence Artificielle</h3>
-      <h3 style="color: var(--accent-mocha) !important; text-align: center; margin: 0;">Industrielle</h3>
+<main id="main-content">
+  <!-- Hero Section Full-Screen -->
+  <section class="hero-section" role="banner">
+    <div class="hero-content">
+
+      
+      <h1 class="hero-title">Déployez des LLM locaux dans votre entreprise</h1>
+      
+      <p class="hero-subtitle">
+        <strong>+10 ans d'expérience</strong> en ingénierie mécanique et IA • Accompagnement complet des PME industrielles lyonnaises
+        <br>Spécialiste mise en place de <strong>LLM locaux</strong> pour l'autonomie de vos données
+      </p>
+      
+      <div class="hero-cta">
+        <a href="contact.html" class="cta">
+          🎯 Audit IA gratuit 30min
+        </a>
+        <a href="cas-dusage.html" class="cta cta-secondary">
+          Voir les cas d'usage
+        </a>
+      </div>
     </div>
-    <h1>Expert IA Industrielle : Déployez des LLM locaux dans votre entreprise</h1>
-    <p style="font-size: 1.2rem; margin: 2rem 0; opacity: 0.95;">
-      <strong>+10 ans d'expérience</strong> en ingénierie mécanique et IA • Accompagnement complet des PME industrielles lyonnaises
-      <br>Spécialiste mise en place de <strong>LLM locaux</strong> pour l'autonomie de vos données
+  </section>
+
+  <!-- Social Proof / Références clients -->
+  <section class="social-proof animate-on-scroll">
+    <h2 style="color: var(--bleu-principal); margin-bottom: 1rem; font-size: 1.5rem;">
+      🏆 Ils me font confiance
+    </h2>
+    <p style="color: var(--gris-moderne); margin-bottom: 2rem;">
+      Références prestigieuses dans l'industrie française et l'écosystème IA
     </p>
-    <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-      <a href="#contact" class="cta">Présentation gratuite + analyse droits 🎯</a>
-      <a href="cas-dusage.html" class="cta cta-secondary">Voir les cas d'usage</a>
+    
+    <div class="clients-grid">
+      <div class="client-logo">
+        <strong>KNDS</strong>
+        <br><small>Défense & Industrie</small>
+      </div>
+      <div class="client-logo">
+        <strong>DeepLife</strong>
+        <br><small>IA Médicale</small>
+      </div>
+      <div class="client-logo">
+        <strong>SetForge</strong>
+        <br><small>Optimisation</small>
+      </div>
+      <div class="client-logo">
+        <strong>Epitech</strong>
+        <br><small>Formation</small>
+      </div>
+      <div class="client-logo">
+        <strong>ARC</strong>
+        <br><small>Industrie Verrière</small>
+      </div>
+      <div class="client-logo">
+        <strong>IFAI</strong>
+        <br><small>Institut IA</small>
+      </div>
     </div>
-  </div>
-</header>
+  </section>
 
-<section class="animate-on-scroll">
-  <div class="container">
-    <h2 class="text-center">🚀 Pourquoi intégrer l'IA maintenant ?</h2>
-    <div class="features-grid">
-      <div class="feature-item">
-        <h3>💰 ROI Immédiat</h3>
-        <p>Réduction des défauts de <strong>30-50%</strong>, optimisation des chaînes de production, automatisation intelligente des tâches répétitives.</p>
-      </div>
-      <div class="feature-item">
-        <h3>🛠️ Solutions No-Code</h3>
-        <p>Outils simples et efficaces que vos équipes peuvent utiliser sans expertise technique poussée.</p>
-      </div>
-      <div class="feature-item">
-        <h3>💡 Financement Optimisé</h3>
-        <p>Jusqu'à <strong>80% de prise en charge</strong> via aides publiques (Bpifrance, CIR, Région AURA).</p>
+  <!-- Pourquoi intégrer l'IA maintenant -->
+  <section class="animate-on-scroll">
+    <div class="container">
+      <h2 class="section-title">🚀 Pourquoi intégrer l'IA maintenant ?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>💰 ROI Immédiat</h3>
+          <p>Réduction des défauts de <strong>30-50%</strong>, optimisation des chaînes de production, automatisation intelligente des tâches répétitives.</p>
+        </div>
+        <div class="feature-card">
+          <h3>🛠️ Solutions No-Code</h3>
+          <p>Outils simples et efficaces que vos équipes peuvent utiliser sans expertise technique poussée.</p>
+        </div>
+        <div class="feature-card">
+          <h3>💡 Financement Optimisé</h3>
+          <p>Jusqu'à <strong>80% de prise en charge</strong> via aides publiques (Bpifrance, CIR, Région AURA).</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="animate-on-scroll">
-  <div class="container">
-    <h2>🎯 Mon accompagnement IA, étape par étape</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>1. 🧠 Acculturation & Formation</h3>
-        <p>Démystification de l'IA, formation aux LLMs, sensibilisation éthique (RGPD, IA Act), prompt engineering appliqué à votre secteur.</p>
-        <div class="badge">Formation certifiante</div>
+  <!-- Accompagnement étape par étape -->
+  <section class="animate-on-scroll">
+    <div class="container">
+      <h2 class="section-title">🎯 Mon accompagnement IA, étape par étape</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>1. 🧠 Acculturation & Formation</h3>
+          <p>Démystification de l'IA, formation aux LLMs, sensibilisation éthique (RGPD, IA Act), prompt engineering appliqué à votre secteur.</p>
+          <div style="background: var(--accent-mocha); color: var(--blanc); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; margin-top: 1rem; display: inline-block;">
+            Formation certifiante
+          </div>
+        </div>
+        
+        <div class="feature-card">
+          <h3>2. 🔍 Diagnostic & Cas d'usage</h3>
+          <p>Analyse approfondie de vos processus, identification des gains potentiels, cartographie des applications IA prioritaires par service.</p>
+          <div style="background: var(--orange-action); color: var(--blanc); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; margin-top: 1rem; display: inline-block;">
+            Bpifrance éligible
+          </div>
+        </div>
+        
+        <div class="feature-card">
+          <h3>3. ⚡ Déploiement & Autonomie</h3>
+          <p>Implémentation no-code, formation équipes internes, transfert de compétences pour une autonomie complète de vos équipes.</p>
+          <div style="background: var(--bleu-principal); color: var(--blanc); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; margin-top: 1rem; display: inline-block;">
+            Roadmap < 6 mois
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="final-cta animate-on-scroll">
+    <div class="final-cta-content">
+      <h2>🚀 Prêt à déployer des LLM dans votre entreprise ?</h2>
+      <p>
+        <strong>Audit IA gratuit 30min</strong> + <strong>analyse de vos droits aux prestations</strong>
+      </p>
+      
+      <div class="cta-group">
+        <a href="mailto:nicolasmorlot@gmail.com?subject=Demande%20audit%20IA%20gratuit%2030min" class="cta">
+          📧 Réserver mon audit gratuit
+        </a>
+        <a href="contact.html" class="cta cta-secondary">
+          📋 Formulaire de contact
+        </a>
       </div>
       
-      <div class="service-card">
-        <h3>2. 🔍 Diagnostic & Cas d'usage</h3>
-        <p>Analyse approfondie de vos processus, identification des gains potentiels, cartographie des applications IA prioritaires par service.</p>
-        <div class="badge">Bpifrance éligible</div>
-      </div>
-      
-      <div class="service-card">
-        <h3>3. ⚡ Déploiement & Autonomie</h3>
-        <p>Implémentation no-code, formation équipes internes, transfert de compétences pour une autonomie complète de vos équipes.</p>
-        <div class="badge">Roadmap < 6 mois</div>
-      </div>
+      <p style="opacity: 0.8; margin-top: 1rem; font-size: 1rem;">
+        📧 <a href="mailto:nicolasmorlot@gmail.com" style="color: var(--blanc); text-decoration: none; font-weight: 600;">nicolasmorlot@gmail.com</a> • 
+        📱 <a href="https://www.linkedin.com/in/nicolas-morlot/" target="_blank" style="color: var(--blanc); text-decoration: none; font-weight: 600;">LinkedIn</a>
+      </p>
     </div>
-  </div>
-</section>
+  </section>
+</main>
 
-<section class="animate-on-scroll">
-  <div class="container">
-    <h2>💰 Financement jusqu'à 80% de vos projets IA</h2>
-    <div class="highlight-box">
-      <h3>🎯 Dispositifs d'aides disponibles pour votre entreprise</h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
-        
-        <div class="bloc">
-          <h4><span class="accent-text">IA Booster – Bpifrance France 2030</span></h4>
-          <p><strong>Diagnostic Data/IA :</strong> 13 000 € HT → Reste à charge <strong>≈ 7 500 € HT</strong></p>
-          <p>✅ Prise en charge à 42% pour les PME éligibles<br>✅ Je vous accompagne dans la demande</p>
-        </div>
-        
-        <div class="bloc">
-          <h4><span class="accent-text">Crédit d'Impôt Recherche (CIR)</span></h4>
-          <p><strong>30% de crédit</strong> sur les dépenses R&D éligibles</p>
-          <p>✅ Jusqu'à 100 M€ de dépenses couvertes<br>✅ Optimisation fiscale immédiate</p>
-        </div>
-        
-        <div class="bloc">
-          <h4><span class="accent-text">Crédit d'Impôt Innovation (CII)</span></h4>
-          <p><strong>30% de crédit</strong> sur prototypage / démonstrateur IA</p>
-          <p>✅ Jusqu'à 120 000 € de crédit<br>✅ Parfait pour les POC IA</p>
-        </div>
-        
-        <div class="bloc">
-          <h4><span class="accent-text">Aide "Industrie du Futur" – Région AURA</span></h4>
-          <p><strong>Subvention jusqu'à 50%</strong> des prestations IA</p>
-          <p>✅ Jusqu'à 16 000 € d'aide<br>✅ Spécialement conçu pour l'industrie 4.0</p>
-        </div>
-        
-        <div class="bloc">
-          <h4><span class="accent-text">Prêt Région Industrie</span></h4>
-          <p><strong>Prêt à taux zéro</strong> jusqu'à 1 M€</p>
-          <p>✅ Différé possible jusqu'à 3 ans<br>✅ Financement des gros projets IA</p>
-        </div>
-        
-        <div class="bloc">
-          <h4><span class="accent-text">Budgets Formation Entreprise + CPF</span></h4>
-          <p><strong>Formations professionnelles</strong> éligibles aux dispositifs légaux</p>
-          <p>✅ Utilisation des budgets formation<br>✅ Comptes personnels de formation (CPF)</p>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="animate-on-scroll">
-  <div class="container">
-    <h2>👨‍💼 Pourquoi me faire confiance ?</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: start;">
-      <div>
-        <h3>🎯 Nicolas Morlot – Expert IA & Industrie</h3>
-        <ul style="margin: 1rem 0;">
-          <li><strong>+10 ans d'expérience</strong> en ingénierie mécanique et IA</li>
-          <li><strong>~50 projets IA</strong> déployés avec succès</li>
-          <li><strong>Spécialiste</strong> LLM locaux et IA souveraine</li>
-          <li><strong>Références prestigieuses :</strong> KNDS, SetForge, DeepLife, ARC, Epitech</li>
-          <li><strong>Approche terrain :</strong> je comprends vos enjeux industriels</li>
-        </ul>
-      </div>
-      <div>
-        <img src="img/profil.png" alt="Nicolas Morlot - Expert IA Industrielle" class="img-illustration">
-      </div>
-    </div>
-    
-    <div class="highlight-box text-center" style="margin-top: 2rem;">
-      <h3>🏆 Ma spécialité : Déploiement de LLM locaux</h3>
-      <p><strong>Intelligence Artificielle souveraine</strong> • <strong>Données sécurisées en interne</strong> • <strong>Zéro dépendance cloud</strong></p>
-      <p>Formation équipes • Solutions sur mesure • Accompagnement complet</p>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="animate-on-scroll" style="background: var(--neutre-chaud); padding: 3rem 2rem; border-radius: 20px; margin: 2rem auto; max-width: 1000px;">
-  <div class="text-center">
-    <h2>🚀 Prêt à déployer des LLM dans votre entreprise ?</h2>
-    <p style="font-size: 1.1rem; margin: 1.5rem 0;">
-      <strong>Présentation gratuite</strong> Formation culture IA & éthique + <strong>analyse de vos droits aux prestations</strong>
-    </p>
-    <div class="decorative-line"></div>
-    
-    <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin: 2rem 0;">
-      <a href="mailto:nicolasmorlot@gmail.com?subject=Demande%20présentation%20gratuite%20IA" class="cta">
-        📧 Demander une présentation
-      </a>
-      <a href="contact.html" class="cta cta-secondary">
-        📋 Formulaire de contact
-      </a>
-    </div>
-    
-    <p style="opacity: 0.8; margin-top: 1rem;">
-      📧 <a href="mailto:nicolasmorlot@gmail.com" style="color: var(--bleu-principal); text-decoration: none; font-weight: 600;">nicolasmorlot@gmail.com</a> • 
-      📱 <a href="https://www.linkedin.com/in/nicolas-morlot/" target="_blank" style="color: var(--bleu-principal); text-decoration: none; font-weight: 600;">LinkedIn</a>
-    </p>
-  </div>
-</section>
-
-<footer>
+<footer role="contentinfo">
   <div class="container">
     <p>&copy; 2025 Nicolas Morlot – Expert IA & Industrie. Tous droits réservés.</p>
     <p style="margin-top: 0.5rem; opacity: 0.8;">Lyon, France • Spécialiste transformation numérique PME industrielles</p>
@@ -197,7 +726,7 @@
 </footer>
 
 <script>
-// Animation au scroll
+// Animation au scroll améliorée
 const observerOptions = {
   threshold: 0.1,
   rootMargin: '0px 0px -50px 0px'
@@ -206,15 +735,45 @@ const observerOptions = {
 const observer = new IntersectionObserver(function(entries) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+      entry.target.classList.add('visible');
     }
   });
 }, observerOptions);
 
+// Observation des éléments à animer
 document.querySelectorAll('.animate-on-scroll').forEach(el => {
-  el.style.opacity = '0';
   observer.observe(el);
+});
+
+// Animation des cartes au survol avec délai
+document.querySelectorAll('.feature-card').forEach((card, index) => {
+  card.style.animationDelay = `${index * 0.1}s`;
+});
+
+// Gestion du focus clavier pour l'accessibilité
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Tab') {
+    document.body.classList.add('keyboard-navigation');
+  }
+});
+
+document.addEventListener('mousedown', function() {
+  document.body.classList.remove('keyboard-navigation');
+});
+
+// Amélioration performance - lazy loading des animations
+const animateElements = document.querySelectorAll('.feature-card, .client-logo');
+const animateObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animationPlayState = 'running';
+    }
+  });
+});
+
+animateElements.forEach(el => {
+  el.style.animationPlayState = 'paused';
+  animateObserver.observe(el);
 });
 </script>
 
