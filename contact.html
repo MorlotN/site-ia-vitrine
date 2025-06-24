@@ -2,63 +2,287 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Prenez contact avec Nicolas Morlot pour vos projets IA en industrie : demande de devis, audit, formation ou accompagnement sur mesure.">
+  <meta name="description" content="Contactez Nicolas Morlot pour vos projets IA industriels : audit gratuit, devis personnalisé, accompagnement PME sur mesure. Réponse sous 24h.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact – Nicolas Morlot</title>
+  <meta name="keywords" content="contact expert IA Lyon, devis IA industrielle, audit gratuit IA, consultant IA PME, Nicolas Morlot contact">
+  <title>Contact | Expert IA Industrielle Lyon – Nicolas Morlot</title>
   <link rel="stylesheet" href="css/style.css">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
 <nav>
-  <img src="img/logo.png" alt="Logo Nicolas Morlot" height="40">
-  <a href="index.html">Accueil</a>
-  <a href="index.html">Accueil</a>
-  <a href="services.html">Services</a>
-  <a href="cas-dusage.html">Cas d’usage</a>
-  <a href="tarifs-aides.html">Tarifs & Aides</a>
-  <a href="a-propos.html">À propos</a>
-  <a href="contact.html">Contact</a>
+  <div class="container">
+    <img src="img/logo.png" alt="Nicolas Morlot - Expert IA Industrielle" height="45">
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="services.html">Services</a>
+      <a href="cas-dusage.html">Cas d'usage</a>
+      <a href="tarifs-aides.html">Tarifs & Aides</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+  </div>
 </nav>
 
 <header>
-  <h1>Contactez-moi</h1>
-  <p>Je suis à votre écoute pour toute demande de diagnostic, formation IA, devis personnalisé ou projet sur mesure.</p>
+  <div class="container">
+    <h1>Démarrons votre projet IA ensemble</h1>
+    <p style="font-size: 1.2rem; opacity: 0.95;">
+      <strong>Audit gratuit de 30 minutes</strong> • Devis personnalisé • Accompagnement financement
+    </p>
+  </div>
 </header>
 
-<section>
-    <form name="contact" method="POST" data-netlify="true" action="merci.html">
-      <input type="hidden" name="form-name" value="contact">
-    
-      <label for="nom">Nom *</label>
-      <input type="text" id="nom" name="nom" required>
-    
-      <label for="email">Adresse email *</label>
-      <input type="email" id="email" name="email" required>
-    
-      <label for="entreprise">Entreprise</label>
-      <input type="text" id="entreprise" name="entreprise">
-    
-      <label for="sujet">Objet de la demande *</label>
-      <select id="sujet" name="sujet" required>
-        <option value="">-- Choisir un sujet --</option>
-        <option value="diagnostic">Demande de diagnostic IA</option>
-        <option value="formation">Formation ou acculturation IA</option>
-        <option value="cas_usage">Étude de cas d’usage ou POC</option>
-        <option value="devis">Demande de devis personnalisé</option>
-        <option value="autre">Autre</option>
-      </select>
-    
-      <label for="message">Message *</label>
-      <textarea id="message" name="message" rows="6" required></textarea>
-    
-      <button type="submit">Envoyer la demande</button>
-    </form>
+<section class="animate-on-scroll">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 2rem 0;">
+      
+      <div class="feature-item">
+        <h3>⚡ Réponse rapide</h3>
+        <p><strong>Sous 24h</strong> pour toute demande de contact, devis ou audit</p>
+      </div>
+      
+      <div class="feature-item">
+        <h3>🎯 Audit gratuit</h3>
+        <p><strong>30 minutes offertes</strong> pour évaluer le potentiel IA de votre entreprise</p>
+      </div>
+      
+      <div class="feature-item">
+        <h3>💰 Simulation financement</h3>
+        <p><strong>Estimation gratuite</strong> des aides disponibles pour votre projet</p>
+      </div>
+      
+      <div class="feature-item">
+        <h3>🔒 Confidentialité</h3>
+        <p><strong>NDA systématique</strong> pour protéger vos informations sensibles</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
 
+<section class="animate-on-scroll">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+      
+      <!-- Formulaire de contact -->
+      <div>
+        <h2>📋 Formulaire de contact</h2>
+        <form name="contact" method="POST" data-netlify="true" action="merci.html">
+          <input type="hidden" name="form-name" value="contact">
+        
+          <label for="nom">Nom complet *</label>
+          <input type="text" id="nom" name="nom" required placeholder="Votre nom et prénom">
+        
+          <label for="email">Adresse email professionnelle *</label>
+          <input type="email" id="email" name="email" required placeholder="votre.email@entreprise.com">
+        
+          <label for="entreprise">Entreprise / Organisation</label>
+          <input type="text" id="entreprise" name="entreprise" placeholder="Nom de votre entreprise">
+          
+          <label for="poste">Fonction / Poste</label>
+          <input type="text" id="poste" name="poste" placeholder="Votre fonction dans l'entreprise">
+          
+          <label for="taille">Taille de l'entreprise</label>
+          <select id="taille" name="taille">
+            <option value="">-- Sélectionner --</option>
+            <option value="1-10">1-10 salariés (TPE)</option>
+            <option value="11-49">11-49 salariés (PE)</option>
+            <option value="50-249">50-249 salariés (PME)</option>
+            <option value="250+">250+ salariés (ETI/GE)</option>
+          </select>
+        
+          <label for="sujet">Objet de votre demande *</label>
+          <select id="sujet" name="sujet" required>
+            <option value="">-- Choisir un sujet --</option>
+            <option value="audit_gratuit">🎯 Audit gratuit IA (30 min)</option>
+            <option value="diagnostic">🔍 Demande de diagnostic IA complet</option>
+            <option value="formation">🎓 Formation ou acculturation IA</option>
+            <option value="cas_usage">⚡ Étude de cas d'usage ou POC</option>
+            <option value="deploiement">🚀 Déploiement solution IA</option>
+            <option value="financement">💰 Simulation aide financement</option>
+            <option value="devis">📊 Demande de devis personnalisé</option>
+            <option value="autre">❓ Autre demande</option>
+          </select>
+          
+          <label for="urgence">Échéance souhaitée</label>
+          <select id="urgence" name="urgence">
+            <option value="">-- Sélectionner --</option>
+            <option value="urgent">⚡ Urgent (< 1 mois)</option>
+            <option value="court_terme">📅 Court terme (1-3 mois)</option>
+            <option value="moyen_terme">📆 Moyen terme (3-6 mois)</option>
+            <option value="reflexion">💭 Phase de réflexion (6+ mois)</option>
+          </select>
+        
+          <label for="message">Décrivez votre projet ou vos besoins *</label>
+          <textarea id="message" name="message" rows="6" required placeholder="Décrivez votre contexte, vos objectifs, vos contraintes..."></textarea>
+        
+          <button type="submit" class="cta" style="width: 100%; margin-top: 1rem;">
+            📧 Envoyer ma demande
+          </button>
+        </form>
+      </div>
+      
+      <!-- Informations contact -->
+      <div>
+        <h2>💬 Contact direct</h2>
+        <div class="service-card">
+          <h3>📧 Email professionnel</h3>
+          <p><a href="mailto:contact@nicolasmorlot.fr" style="color: var(--bleu-principal); font-weight: 600; text-decoration: none;">contact@nicolasmorlot.fr</a></p>
+          <p style="font-size: 0.9rem; opacity: 0.8;">Réponse garantie sous 24h</p>
+        </div>
+        
+        <div class="service-card">
+          <h3>🔗 LinkedIn</h3>
+          <p><a href="https://www.linkedin.com/in/nicolas-morlot/" target="_blank" style="color: var(--bleu-principal); font-weight: 600; text-decoration: none;">Nicolas Morlot - Expert IA</a></p>
+          <p style="font-size: 0.9rem; opacity: 0.8;">Réseau professionnel et actualités IA</p>
+        </div>
+        
+        <div class="service-card">
+          <h3>📍 Localisation</h3>
+          <p><strong>Lyon, Auvergne-Rhône-Alpes</strong></p>
+          <p style="font-size: 0.9rem; opacity: 0.8;">Interventions possibles dans toute la France</p>
+        </div>
+        
+        <div class="highlight-box">
+          <h3>🎯 Prêt pour un échange ?</h3>
+          <p style="margin: 1rem 0;">Planifiez directement un <strong>audit gratuit de 30 minutes</strong> pour évaluer le potentiel IA de votre entreprise.</p>
+          <a href="mailto:contact@nicolasmorlot.fr?subject=Demande%20audit%20gratuit%20IA%20-%2030%20minutes&body=Bonjour%20Nicolas,%0D%0A%0D%0AJe%20souhaiterais%20planifier%20un%20audit%20gratuit%20de%2030%20minutes%20pour%20évaluer%20le%20potentiel%20IA%20de%20mon%20entreprise.%0D%0A%0D%0AInformations%20sur%20mon%20entreprise%20:%0D%0A-%20Nom%20:%20%0D%0A-%20Secteur%20:%20%0D%0A-%20Taille%20:%20%0D%0A-%20Problématiques%20actuelles%20:%20%0D%0A%0D%0AMes%20disponibilités%20:%0D%0A%0D%0ACordialement," class="cta cta-secondary" style="width: 100%;">
+            📅 Planifier l'audit gratuit
+          </a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<section class="animate-on-scroll">
+  <div class="container">
+    <div class="highlight-box">
+      <h2>🏆 Pourquoi me choisir ?</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+        
+        <div>
+          <h4>🎯 <span class="accent-text">+10 ans d'expérience</span></h4>
+          <p>Ingénieur mécanique et IA, je comprends vos enjeux industriels</p>
+        </div>
+        
+        <div>
+          <h4>⚡ <span class="accent-text">+200 projets IA</span></h4>
+          <p>Déployés avec succès dans l'industrie française</p>
+        </div>
+        
+        <div>
+          <h4>🏭 <span class="accent-text">Références prestigieuses</span></h4>
+          <p>KNDS, SetForge, DeepLife, ARC, Epitech, IFAI</p>
+        </div>
+        
+        <div>
+          <h4>💰 <span class="accent-text">Expert financement</span></h4>
+          <p>Accompagnement complet dans l'obtention des aides publiques</p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="animate-on-scroll">
+  <div class="container">
+    <h2>❓ Questions fréquentes</h2>
+    <div class="services-grid">
+      
+      <div class="bloc">
+        <h4>⏱️ Quel est le délai de réponse ?</h4>
+        <p>Je réponds à toutes les demandes sous <strong>24h maximum</strong>. Pour les audits gratuits, je propose généralement un créneau dans la semaine qui suit.</p>
+      </div>
+      
+      <div class="bloc">
+        <h4>💰 L'audit est-il vraiment gratuit ?</h4>
+        <p>Oui, l'audit de 30 minutes est <strong>entièrement gratuit et sans engagement</strong>. Il permet d'évaluer votre maturité IA et d'identifier les premiers axes d'amélioration.</p>
+      </div>
+      
+      <div class="bloc">
+        <h4>🌍 Intervenez-vous en dehors de Lyon ?</h4>
+        <p>Oui, j'interviens dans <strong>toute la France</strong>. Les formations et accompagnements peuvent se faire en présentiel ou en distanciel selon vos préférences.</p>
+      </div>
+      
+      <div class="bloc">
+        <h4>📊 Comment se déroule l'accompagnement financement ?</h4>
+        <p>J'analyse votre éligibilité aux différentes aides, vous aide à <strong>monter les dossiers</strong> et optimise le plan de financement pour minimiser votre reste à charge.</p>
+      </div>
+      
+      <div class="bloc">
+        <h4>🔒 Mes données sont-elles protégées ?</h4>
+        <p>Absolutely. Je signe systématiquement un <strong>NDA</strong> et respecte scrupuleusement le RGPD. Vos données restent confidentielles et ne sont jamais partagées.</p>
+      </div>
+      
+      <div class="bloc">
+        <h4>⚡ Puis-je avoir des références clients ?</h4>
+        <p>Bien sûr ! Je peux vous mettre en relation avec des <strong>clients satisfaits</strong> dans des secteurs similaires au vôtre pour des retours d'expérience directs.</p>
+      </div>
+      
+    </div>
+  </div>
 </section>
 
 <footer>
-  <p>&copy; 2025 Nicolas Morlot – Expert IA & Industrie. Tous droits réservés.</p>
+  <div class="container">
+    <p>&copy; 2025 Nicolas Morlot – Expert IA & Industrie. Tous droits réservés.</p>
+    <p style="margin-top: 0.5rem; opacity: 0.8;">Lyon, France • Spécialiste transformation numérique PME industrielles</p>
+  </div>
 </footer>
+
+<script>
+// Animation au scroll
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => {
+  el.style.opacity = '0';
+  observer.observe(el);
+});
+
+// Amélioration UX formulaire
+document.getElementById('sujet').addEventListener('change', function() {
+  const messageField = document.getElementById('message');
+  const selectedValue = this.value;
+  
+  let placeholder = "Décrivez votre contexte, vos objectifs, vos contraintes...";
+  
+  switch(selectedValue) {
+    case 'audit_gratuit':
+      placeholder = "Décrivez brièvement votre entreprise et les processus que vous aimeriez optimiser avec l'IA...";
+      break;
+    case 'formation':
+      placeholder = "Quel est votre niveau actuel en IA ? Combien de personnes à former ? Quels objectifs pédagogiques ?";
+      break;
+    case 'cas_usage':
+      placeholder = "Quel processus souhaitez-vous automatiser ? Quels sont vos défis actuels ? Avez-vous des données disponibles ?";
+      break;
+    case 'financement':
+      placeholder = "Quel est le budget estimé de votre projet ? Dans quel délai souhaitez-vous le réaliser ?";
+      break;
+  }
+  
+  messageField.placeholder = placeholder;
+});
+</script>
 
 </body>
 </html>
