@@ -1,20 +1,25 @@
 # Autoriser tous les robots Ã  explorer toutes les pages
 User-agent: *
-Disallow:
+Allow: /
 
-# Indiquer lâ€™emplacement du plan de site XML pour un meilleur SEO
-Sitemap: https://www.nicolasmorlot.fr/sitemap.xml
+# Pages importantes à indexer en priorité
+Allow: /index.html
+Allow: /services.html
+Allow: /cas-dusage.html
+Allow: /contact.html
+Allow: /a-propos.html
+Allow: /tarifs-aides.html
 
-# Directives facultatives
-# EmpÃªcher lâ€™indexation des fichiers potentiellement sensibles (non prÃ©sents ici, mais prÃ©ventif)
+# Empêcher l'indexation des fichiers système
 Disallow: /cgi-bin/
 Disallow: /admin/
 Disallow: /tmp/
-
-# DÃ©lais entre les requÃªtes (facultatif)
-Crawl-delay: 10
-
-# EmpÃªcher lâ€™indexation des fichiers temporaires ou de build
 Disallow: /*.bak$
 Disallow: /*.tmp$
 Disallow: /*.swp$
+
+# Sitemap
+Sitemap: https://www.nicolasmorlot.fr/sitemap.xml
+
+# Délai entre requêtes (optionnel pour éviter surcharge)
+Crawl-delay: 1

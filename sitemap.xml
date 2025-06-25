@@ -1,27 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- PAGE ACCUEIL - PRIORITÉ MAXIMALE -->
   <url>
     <loc>https://www.nicolasmorlot.fr/index.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- PAGES SERVICES - PRIORITÉ ÉLEVÉE -->
   <url>
     <loc>https://www.nicolasmorlot.fr/services.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://www.nicolasmorlot.fr/cas-dusage.html</loc>
-    <priority>0.8</priority>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
-  <url>
-    <loc>https://www.nicolasmorlot.fr/tarifs-aides.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.nicolasmorlot.fr/a-propos.html</loc>
-    <priority>0.7</priority>
-  </url>
+
+  <!-- PAGES CONVERSION - PRIORITÉ ÉLEVÉE -->
   <url>
     <loc>https://www.nicolasmorlot.fr/contact.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.nicolasmorlot.fr/tarifs-aides.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- PAGE À PROPOS - PRIORITÉ MOYENNE -->
+  <url>
+    <loc>https://www.nicolasmorlot.fr/a-propos.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- FUTURES PAGES BLOG (à ajouter) -->
+  <!-- 
+  <url>
+    <loc>https://www.nicolasmorlot.fr/blog/deployer-llm-locaux-guide-2025.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  -->
+
 </urlset>
