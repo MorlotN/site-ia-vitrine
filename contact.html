@@ -37,7 +37,7 @@
 
 <section class="animate-on-scroll">
   <div class="container">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 2rem 0;">
+    <div class="contact-features-grid">
       
       <div class="feature-item animated-card">
         <h3>⚡ Réponse rapide</h3>
@@ -65,10 +65,10 @@
 
 <section class="animate-on-scroll">
   <div class="container">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+    <div class="contact-main-section">
       
       <!-- Formulaire de contact fonctionnel -->
-      <div>
+      <div class="contact-form-wrapper">
         <h2>📋 Formulaire de contact</h2>
         
         <!-- Formulaire qui fonctionne avec mailto -->
@@ -133,8 +133,9 @@
       </div>
       
       <!-- Informations contact -->
-      <div>
+      <div class="contact-info-wrapper">
         <h2>💬 Contact direct</h2>
+        
         <div class="service-card animated-card">
           <h3>📧 Email professionnel</h3>
           <p><a href="mailto:nicolasmorlot@gmail.com" style="color: var(--bleu-principal); font-weight: 600; text-decoration: none;">nicolasmorlot@gmail.com</a></p>
@@ -170,7 +171,7 @@
   <div class="container">
     <div class="highlight-box">
       <h2>🏆 Pourquoi me choisir ?</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+      <div class="why-choose-grid">
         
         <div>
           <h4>🎯 <span class="accent-text">+10 ans d'expérience</span></h4>
@@ -200,13 +201,12 @@
 <section class="animate-on-scroll">
   <div class="container">
     <h2>❓ Questions fréquentes</h2>
-    <div class="services-grid">
+    <div class="faq-grid">
       
       <div class="bloc animated-card">
         <h4>⏱️ Quel est le délai de réponse ?</h4>
         <p>Je réponds à toutes les demandes sous <strong>1 semaine maximum</strong>. Pour les audits, je propose généralement un créneau dans les 2 semaines qui suivent.</p>
       </div>
-      
       
       <div class="bloc animated-card">
         <h4>🌍 Intervenez-vous en dehors de Lyon ?</h4>
@@ -234,6 +234,57 @@
   </div>
 </footer>
 
+<script>
+function sendEmail(event) {
+  event.preventDefault();
+  
+  const form = document.getElementById('contactForm');
+  const formData = new FormData(form);
+  
+  // Construire l'email avec les données du formulaire
+  const subject = `Demande IA - ${formData.get('sujet')} - ${formData.get('nom')}`;
+  const body = `
+Bonjour Nicolas,
+
+Nouvelle demande via le formulaire de contact :
+
+--- INFORMATIONS CONTACT ---
+Nom : ${formData.get('nom')}
+Email : ${formData.get('email')}
+Entreprise : ${formData.get('entreprise')}
+Poste : ${formData.get('poste')}
+Taille entreprise : ${formData.get('taille')}
+
+--- DEMANDE ---
+Objet : ${formData.get('sujet')}
+Échéance : ${formData.get('urgence')}
+
+Description du projet :
+${formData.get('message')}
+
+Cordialement,
+${formData.get('nom')}
+  `;
+  
+  // Créer le lien mailto
+  const mailtoLink = `mailto:nicolasmorlot@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  
+  // Ouvrir le client email
+  window.location.href = mailtoLink;
+  
+  // Afficher le message de confirmation
+  document.getElementById('confirmationMessage').style.display = 'block';
+  
+  // Masquer le formulaire ou le réinitialiser
+  form.style.opacity = '0.5';
+  
+  // Scroll vers le message de confirmation
+  document.getElementById('confirmationMessage').scrollIntoView({
+    behavior: 'smooth',
+    block: 'center'
+  });
+}
+</script>
 
 </body>
 </html>
