@@ -32,7 +32,7 @@ document.querySelectorAll('.animated-card').forEach((card, index) => {
   <div class="container" style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;">
     
     <div style="flex: 1; min-width: 300px;">
-      <h3 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; font-weight: 600;">🍪 Gestion des cookies</h3>
+      <h3 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; font-weight: 600;">Gestion des cookies</h3>
       <p style="margin: 0; font-size: 0.95rem; line-height: 1.4; opacity: 0.95; color: rgba(255, 255, 255, 0.95); text-shadow: 0 1px 3px rgba(0,0,0,0.3);">
         Ce site utilise des cookies pour améliorer votre expérience et analyser le trafic. Vos données restent privées et sécurisées.
         <a href="politique-cookies.html" style="color: #E53E3E; text-decoration: underline; font-weight: 500;">En savoir plus</a>
@@ -41,10 +41,10 @@ document.querySelectorAll('.animated-card').forEach((card, index) => {
     
     <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
       <button onclick="acceptAllCookies()" style="background: #E53E3E; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease;">
-        ✅ Accepter tout
+         Accepter tout
       </button>
       <button onclick="showCookieSettings()" style="background: transparent; color: white; border: 2px solid white; padding: 0.75rem 1.5rem; border-radius: 8px; cursor: pointer; font-weight: 500; font-size: 0.95rem; transition: all 0.3s ease;">
-        ⚙️ Personnaliser
+         Personnaliser
       </button>
       <button onclick="refuseAllCookies()" style="background: transparent; color: white; border: 1px solid rgba(255,255,255,0.5); padding: 0.75rem 1.5rem; border-radius: 8px; cursor: pointer; font-size: 0.95rem; transition: all 0.3s ease;">
         ❌ Refuser
@@ -58,13 +58,13 @@ document.querySelectorAll('.animated-card').forEach((card, index) => {
   <div style="background: white; max-width: 600px; margin: 2rem auto; border-radius: 16px; padding: 2rem; max-height: 80vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
     
     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
-      <h2 style="margin: 0; color: #1A202C;">⚙️ Paramètres des cookies</h2>
+      <h2 style="margin: 0; color: #1A202C;"> Paramètres des cookies</h2>
       <button onclick="closeCookieSettings()" style="background: #E5E7EB; border: none; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-size: 1.2rem;">×</button>
     </div>
     
     <div style="margin: 1.5rem 0; padding: 1.5rem; background: #F0FDF4; border-radius: 12px; border-left: 4px solid #10B981;">
       <h3 style="display: flex; align-items: center; justify-content: space-between; margin: 0 0 0.5rem 0;">
-        🔧 Cookies essentiels
+         Cookies essentiels
         <span style="background: #10B981; color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">OBLIGATOIRE</span>
       </h3>
       <p style="margin: 0; font-size: 0.9rem; color: #374151;">Nécessaires au fonctionnement du site (navigation, sécurité, préférences cookies).</p>
@@ -72,7 +72,7 @@ document.querySelectorAll('.animated-card').forEach((card, index) => {
     
     <div style="margin: 1.5rem 0; padding: 1.5rem; background: #EFF6FF; border-radius: 12px; border-left: 4px solid #3B82F6;">
       <h3 style="display: flex; align-items: center; justify-content: space-between; margin: 0 0 0.5rem 0;">
-        📊 Cookies analytiques
+         Cookies analytiques
         <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
           <input type="checkbox" id="analytics-cookies" checked style="width: 18px; height: 18px;">
           <span style="font-size: 0.9rem; font-weight: 500;">Autoriser</span>
@@ -83,7 +83,7 @@ document.querySelectorAll('.animated-card').forEach((card, index) => {
     
     <div style="margin: 1.5rem 0; padding: 1.5rem; background: #FEF2F2; border-radius: 12px; border-left: 4px solid #EF4444;">
       <h3 style="display: flex; align-items: center; justify-content: space-between; margin: 0 0 0.5rem 0;">
-        🎯 Cookies marketing
+         Cookies marketing
         <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
           <input type="checkbox" id="marketing-cookies" style="width: 18px; height: 18px;">
           <span style="font-size: 0.9rem; font-weight: 500;">Autoriser</span>
@@ -97,7 +97,7 @@ document.querySelectorAll('.animated-card').forEach((card, index) => {
         Annuler
       </button>
       <button onclick="saveCookieSettings()" style="background: #E53E3E; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; cursor: pointer; font-weight: 600;">
-        ✅ Enregistrer mes choix
+         Enregistrer mes choix
       </button>
     </div>
   </div>
@@ -142,7 +142,7 @@ function acceptAllCookies() {
   loadServices(consent);
   
   // Feedback utilisateur
-  showCookieMessage('✅ Tous les cookies ont été acceptés. Merci !');
+  showCookieMessage('Tous les cookies ont été acceptés. Merci !');
 }
 
 function refuseAllCookies() {
@@ -191,7 +191,7 @@ function saveCookieSettings() {
   loadServices(consent);
   
   // Feedback utilisateur
-  showCookieMessage('⚙️ Vos préférences ont été enregistrées.');
+  showCookieMessage(' Vos préférences ont été enregistrées.');
 }
 
 function loadServices(consent) {
