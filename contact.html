@@ -20,6 +20,7 @@
       <a href="services.html">Services</a>
       <a href="cas-dusage.html">Cas d'usage</a>
       <a href="tarifs-aides.html">Tarifs & Aides</a>
+      <a href="apprendre-ia.html">Apprendre l'IA</a>
       <a href="a-propos.html">À propos</a>
       <a href="contact.html" class="active">Contact</a>
     </div>
@@ -101,6 +102,7 @@
             <option value="audit_gratuit">Audit IA 30min + analyse droits</option>
             <option value="diagnostic">Demande de diagnostic IA complet</option>
             <option value="formation">Formation ou acculturation IA</option>
+            <option value="apprendre">Apprendre à créer une application avec l'IA</option>
             <option value="cas_usage">Étude de cas d'usage ou POC</option>
             <option value="deploiement">Déploiement solution IA</option>
             <option value="financement">Simulation aide financement</option>
@@ -231,7 +233,14 @@
   </div>
 </footer>
 
-<script>function sendEmail(event) {
+<script>// Sujet pré-choisi par le lien (ex. contact.html?sujet=apprendre depuis la page Apprendre l'IA)
+const sujetDemande = new URLSearchParams(window.location.search).get('sujet');
+const selectSujet = document.getElementById('sujet');
+if (sujetDemande && selectSujet.querySelector(`option[value="${CSS.escape(sujetDemande)}"]`)) {
+  selectSujet.value = sujetDemande;
+}
+
+function sendEmail(event) {
   event.preventDefault();
   
   const form = document.getElementById('contactForm');

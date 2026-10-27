@@ -1133,3 +1133,16 @@ section:nth-child(4) { animation-delay: 0.4s; }
 .flex { display: flex; }
 .block { display: block; }
 .inline-block { display: inline-block; }
+/* Navigation : les liens passent a la ligne plutot que de deborder */
+.nav-links {
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 0.5rem;
+}
+
+/* Entre tablette et grand ecran, les 7 liens tiennent sur une ligne */
+@media (min-width: 769px) and (max-width: 1100px) {
+  .nav-links {
+    gap: 0.5rem;
+  }
+}
